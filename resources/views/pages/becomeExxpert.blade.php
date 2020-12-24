@@ -23,7 +23,7 @@
         <h2><strong>Get new jobs.</strong></h2> 
        <p> <strong>  What is your line of work?</strong></p>
     
-    <form class="p-5" action="{{route('becomeExxpert.service')}}">
+    <form class="p-5" action="{{route('becomeExxpert.progress')}}">
         <div class="form-group">
           
           <input type="text" class="form-control form-control-lg" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Servies">

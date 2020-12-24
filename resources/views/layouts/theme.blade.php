@@ -97,7 +97,7 @@
     Alerts Center
     </h6>
     
-    <a class="dropdown-item dropdown-notifications-footer" href="alerts.html">View All Alerts</a>
+  <a class="dropdown-item dropdown-notifications-footer" href="{{route('myalerts')}}">View All Alerts</a>
     </div>
     </li>
     
@@ -126,7 +126,7 @@
     <div class="dropdown-notifications-item-content-details">Diane Chambers · 2d</div>
     </div>
     </a>
-    <a class="dropdown-item dropdown-notifications-footer" href="messages.html">Read All Messages</a>
+  <a class="dropdown-item dropdown-notifications-footer" href="{{route('mymessages')}}">Read All Messages</a>
     </div>
     </li>
     
@@ -141,7 +141,7 @@
     </div>
     </h6>
     <div class="dropdown-divider"></div>
-    <a class="dropdown-item" href="account.html">
+  <a class="dropdown-item" href="{{route('myaccount')}}">
     <div class="dropdown-item-icon">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings">
     <circle cx="12" cy="12" r="3"></circle>
@@ -196,6 +196,7 @@ Home
 <li class="nav-item">
 <a class="nav-link" href="contact.html">Events</a>
 </li>
+
 <li class="nav-item dropdown">
 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 explore
@@ -311,7 +312,9 @@ explore
         </div>  
 </div>
 </li>
-
+<li class="nav-item">
+  <a class="nav-link" href="contact.html">Exxpert tools box</a>
+  </li>
 </ul>
 </div>
 <ul class="navbar-nav ml-auto">

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class BecomeExxpertController extends Controller
+class AlertsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,19 +13,7 @@ class BecomeExxpertController extends Controller
      */
     public function index()
     {
-        return view('pages.becomeExxpert');
-    }
-    public function servies()
-    {
-        return view('pages.selectservice');
-    }
-    public function businessgoal()
-    {
-        return view('pages.businessgoal');
-    }
-    public function progress()
-    {
-        return view('pages.progress');
+        //
     }
 
     /**

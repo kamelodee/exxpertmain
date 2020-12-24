@@ -3,7 +3,7 @@
 @section('content')
 
 
-<section class="py-5 homepage-search-block position-relative">
+<section class="py-5 homepage-search-block position-relative" >
     <div class="container">
     <div class="row py-lg-5">
     <div class="col-lg-7">

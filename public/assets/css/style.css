@@ -352,94 +352,128 @@ a {
 /* check services form */
 
 
-.card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border: 1px solid #d2d2dc;
-    border-radius: 0
+
+
+
+
+
+input[type="checkbox"] {
+    display: none
 }
 
-.card .card-body {
-    padding: 1.25rem 1.75rem
-}
-
-.card-body {
-    flex: 1 1 auto;
-    padding: 1.25rem
-}
-
-.card .card-title {
-    color: #000000;
-    margin-bottom: 0.625rem;
-    text-transform: capitalize;
-    font-size: 0.875rem;
-    font-weight: 500
-}
-
-.card .card-description {
-    margin-bottom: .875rem;
-    font-weight: 400;
-    color: #76838f
-}
-
-p {
-    font-size: 0.875rem;
-    margin-bottom: .5rem;
-    line-height: 1.5rem
-}
-
-@keyframes click-wave {
-    0% {
-        height: 40px;
-        width: 40px;
-        opacity: 0.15;
-        position: relative
-    }
-
-    100% {
-        height: 200px;
-        width: 200px;
-        margin-left: -80px;
-        margin-top: -80px;
-        opacity: 0
-    }
-}
-
-.option-input {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -ms-appearance: none;
-    -o-appearance: none;
+input[type="checkbox"]+label {
     appearance: none;
-    position: relative;
-    top: 13.33333px;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    height: 40px;
-    width: 40px;
-    transition: all 0.15s ease-out 0s;
-    background: #cbd1d8;
-    border: none;
-    color: #fff;
     cursor: pointer;
     display: inline-block;
-    margin-right: 0.5rem;
-    outline: none;
+    padding-left: 40px;
     position: relative;
-    z-index: 1000
+    vertical-align: middle
 }
 
-.option-input:hover {
-    background: #9faab7
+input[type="checkbox"]:checked+label {
+    backface-visibility: hidden;
+    animation: checked 200ms ease 1
 }
 
-.option-input:checked {
+input[type="checkbox"]+label:before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 10px;
+    top: 6px;
+    left: 11px;
+    border: 4px solid rgba(255, 255, 255, 0);
+    border-top: none;
+    border-right: none;
+    transform: rotate(-45deg)
+}
+
+input[type="checkbox"]+label:hover:before {
+    border-color: rgba(255, 255, 255, 0.5)
+}
+
+input[type="checkbox"]:checked+label:before {
+    border-color:#28a745;
+}
+input[type="checkbox"]+label:after {
+    border: 3px solid #28a745;
+    content: "";
+    height: 30px;
+    left: 3px;
+    position: absolute;
+    top: -1px;
+    width: 30px;
+    
+}
+
+input[type="checkbox"]:checked+label:after {
+    border-color:#28a745;
+}
+
+
+
+
+
+
+input[type="radio"] {
+    display: none
+}
+
+input[type="radio"]+label:before {
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    padding: 3px;
+    margin-right: 3px;
+    background-clip: content-box;
+    border: 3px solid #28a745;
+    background-color: #e7e6e7;
+    border-radius: 50%
+}
+
+input[type="radio"]:checked+label:before {
+    background: #28a745;
+}
+
+label {
+    display: flex;
+    align-items: center
+}
+/* check services form end */
+
+/* check business goal */
+
+.wrapper .box {
+    padding: 20px 30px;
+    background: #fff;
+    border-radius: 10px
+}
+
+.wrapper .box label {
+    display: flex;
+    height: 53px;
+    width: 100%;
+    align-items: center;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding-left: 11px;
+    cursor: pointer;
+    transition: all 0.3s ease
+}
+
+#value-1:checked~.value-1,
+#value-2:checked~.value-2,
+#value-3:checked~.value-3,
+#value-4:checked~.value-4,
+#value-5:checked~.value-5, 
+#value-6:checked~.value-6, 
+#value-7:checked~.value-7, 
+#value-8:checked~.value-8, 
+#value-9:checked~.value-9, 
+#value-10:checked~.value-10 
+{
    
 background: #2cdd9b;
 background: -webkit-linear-gradient(
@@ -449,37 +483,333 @@ background: -webkit-linear-gradient(
 );
 }
 
-.option-input:checked::before {
-    height: 40px;
-    width: 40px;
-    position: absolute;
-    content: "\f111";
-    font-family: "Font Awesome 5 Free";
-    display: inline-block;
-    font-size: 26.66667px;
-    text-align: center;
-    line-height: 40px
-}
-
-.option-input:checked::after {
-    -webkit-animation: click-wave 0.25s;
-    -moz-animation: click-wave 0.25s;
-    animation: click-wave 0.25s;
-    background: #28a745;
-    content: '';
-    display: block;
+.wrapper .box label .select-dots {
+    height: 20px;
+    width: 20px;
+    background: #d9d9d9;
+    border-radius: 50%;
     position: relative;
-    z-index: 100
+    transition: all 0.3s ease
 }
 
-.option-input.radio {
-    border-radius: 50%
+#value-1:checked~.value-1 .select-dots,
+#value-2:checked~.value-2 .select-dots,
+#value-3:checked~.value-3 .select-dots,
+#value-4:checked~.value-4 .select-dots,
+#value-5:checked~.value-5 .select-dots,
+#value-6:checked~.value-6 .select-dots,
+#value-7:checked~.value-7 .select-dots,
+#value-8:checked~.value-8 .select-dots,
+#value-9:checked~.value-9 .select-dots,
+#value-10:checked~.value-10 .select-dots
+ {
+    background: #fff
 }
 
-.option-input.radio::after {
-    border-radius: 50%
+.box label .select-dots::before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(2);
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    transition: all 0.3s ease
 }
-/* check services form end */
+
+#value-1:checked~.value-1 .select-dots::before,
+#value-2:checked~.value-2 .select-dots::before,
+#value-3:checked~.value-3 .select-dots::before,
+#value-4:checked~.value-4 .select-dots::before, 
+#value-5:checked~.value-5 .select-dots::before, 
+#value-6:checked~.value-6 .select-dots::before, 
+#value-7:checked~.value-7 .select-dots::before,
+#value-8:checked~.value-8 .select-dots::before, 
+#value-9:checked~.value-9 .select-dots::before,
+#value-10:checked~.value-10 .select-dots::before 
+{
+   
+background: #2cdd9b;
+background: -webkit-linear-gradient(
+    legacy-direction(to right),
+    #2cdd9b 0%,
+    #1dc8cc 100%
+);
+    transform: translate(-50%, -50%) scale(1)
+}
+
+.wrapper .box label .text {
+    color: #333;
+    font-size: 18px;
+    font-weight: 400;
+    padding-left: 10px;
+    transition: color 0.3s ease
+}
+
+#value-1:checked~.value-1 .text,
+#value-2:checked~.value-2 .text,
+#value-3:checked~.value-3 .text,
+#value-4:checked~.value-4 .text,
+#value-5:checked~.value-5 .text,
+#value-6:checked~.value-6 .text,
+#value-7:checked~.value-7 .text,
+#value-8:checked~.value-8 .text,
+#value-9:checked~.value-9 .text,
+#value-10:checked~.value-10 .text
+ {
+    color: #fff
+}
+
+.wrapper .box input[type="radio"] {
+    display: none
+}
+/* check business goal end */
+
+/* progress */
+
+
+#heading {
+    text-transform: uppercase;
+    color: #000;
+    font-weight: normal
+}
+
+#msform {
+    text-align: center;
+    position: relative;
+    margin-top: 20px
+}
+
+#msform fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding-bottom: 20px;
+    position: relative
+}
+
+.form-card {
+    text-align: left
+}
+
+#msform fieldset:not(:first-of-type) {
+    display: none
+}
+
+#msform input,
+#msform textarea {
+    padding: 8px 15px 8px 15px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    margin-bottom: 25px;
+    margin-top: 2px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: #000;
+    background-color: #ECEFF1;
+    font-size: 16px;
+    letter-spacing: 1px
+}
+
+#msform input:focus,
+#msform textarea:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px #2cdd9b;
+    outline-width: 0
+}
+
+#msform .action-button {
+    width: 100px;
+    
+background: #2cdd9b;
+background: -webkit-linear-gradient(
+    legacy-direction(to right),
+    #2cdd9b 0%,
+    #1dc8cc 100%
+);
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 0px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 0px 10px 5px;
+    float: right
+}
+
+#msform .action-button:hover,
+#msform .action-button:focus {
+   
+background: #2cdd9b;
+background: -webkit-linear-gradient(
+    legacy-direction(to right),
+    #2cdd9b 0%,
+    #1dc8cc 100%
+);
+}
+
+#msform .action-button-previous {
+    width: 100px;
+   
+background: #2cdd9b;
+background: -webkit-linear-gradient(
+    legacy-direction(to right),
+    #2cdd9b 0%,
+    #1dc8cc 100%
+);
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 0px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px 10px 0px;
+    float: right
+}
+
+#msform .action-button-previous:hover,
+#msform .action-button-previous:focus {
+    
+background: #2cdd9b;
+background: -webkit-linear-gradient(
+    legacy-direction(to right),
+    #2cdd9b 0%,
+    #1dc8cc 100%
+);
+}
+
+.card {
+    z-index: 0;
+    border: none;
+    position: relative
+}
+
+.fs-title {
+    font-size: 25px;
+    color: #000;
+    margin-bottom: 15px;
+    font-weight: normal;
+    text-align: left
+}
+
+.purple-text {
+    color: #2cdd9b;
+    font-weight: normal
+}
+
+.steps {
+    font-size: 25px;
+    color: gray;
+    margin-bottom: 10px;
+    font-weight: normal;
+    text-align: right
+}
+
+.fieldlabels {
+    color: gray;
+    text-align: left
+}
+
+#progressbar {
+    margin-bottom: 30px;
+    overflow: hidden;
+    color: lightgrey
+}
+
+#progressbar .active {
+    color: #2cdd9b;
+}
+
+#progressbar li {
+    list-style-type: none;
+    font-size: 15px;
+    width: 25%;
+    float: left;
+    position: relative;
+    font-weight: 400
+}
+
+#progressbar #account:before {
+    font-family: FontAwesome;
+    content: "\f13e"
+}
+
+#progressbar #personal:before {
+    font-family: FontAwesome;
+    content: "\f007"
+}
+
+#progressbar #payment:before {
+    font-family: FontAwesome;
+    content: "\f030"
+}
+
+#progressbar #confirm:before {
+    font-family: FontAwesome;
+    content: "\f00c"
+}
+
+#progressbar li:before {
+    width: 50px;
+    height: 50px;
+    line-height: 45px;
+    display: block;
+    font-size: 20px;
+    color: #ffffff;
+    background: lightgray;
+    border-radius: 50%;
+    margin: 0 auto 10px auto;
+    padding: 2px
+}
+
+#progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: lightgray;
+    position: absolute;
+    left: 0;
+    top: 25px;
+    z-index: -1
+}
+
+#progressbar li.active:before,
+#progressbar li.active:after {
+   
+background: #2cdd9b;
+background: -webkit-linear-gradient(
+    legacy-direction(to right),
+    #2cdd9b 0%,
+    #1dc8cc 100%
+);
+}
+
+.progress {
+    height: 20px
+}
+
+.progress-bar {
+    
+background: #2cdd9b;
+background: -webkit-linear-gradient(
+    legacy-direction(to right),
+    #2cdd9b 0%,
+    #1dc8cc 100%
+);
+}
+
+.fit-image {
+    width: 100%;
+    object-fit: cover
+}
+/* progress end */
 /* Chat */
 .osahan-chat-box {
     height: 322px;

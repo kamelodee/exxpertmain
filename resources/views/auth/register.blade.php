@@ -20,9 +20,9 @@
     <label class="mb-1">First name</label>
     <div class="position-relative icon-form-control">
     <i class="mdi mdi-account position-absolute"></i>
-    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+    <input id="firstname" type="text" class="form-control @error('firstname') is-invalid @enderror" name="firstname" value="{{ old('firstname') }}" required autocomplete="firstname" autofocus>
 
-                                @error('name')
+                                @error('firstname')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -33,9 +33,16 @@
     <div class="col">
     <div class="form-group">
     <label class="mb-1">Last name</label>
-    <div class="position-relative">
-    <input type="text" class="form-control">
-    </div>
+    <div class="position-relative icon-form-control">
+        <i class="mdi mdi-account position-absolute"></i>
+    <input type="text" class="form-control @error('lastname') is-invalid @enderror" name="lastname" value="{{ old('lastname') }}" required autocomplete="lastname" autofocus>
+    @error('lastname')
+    <span class="invalid-feedback" role="alert">
+        <strong>{{ $message }}</strong>
+    </span>
+@enderror
+
+</div>
     </div>
     </div>
     </div>
@@ -52,6 +59,7 @@
                                 @enderror
     </div>
     </div>
+    
     <div class="form-group">
     <label class="mb-1">Password (6 or more characters)</label>
     <div class="position-relative icon-form-control">
@@ -65,6 +73,18 @@
                                 @enderror
     </div>
     </div>
+
+    <div class="form-group">
+    <label class="mb-1">Password (6 or more characters)</label>
+    <div class="position-relative icon-form-control">
+    <i class="mdi mdi-key-variant position-absolute"></i>
+    <input id="password-confirm" type="password" class="form-control" 
+    name="password_confirmation" required autocomplete="new-password" placeholder="Confirm Password">
+                                
+    </div>
+    </div>
+
+
     <div class="form-group">
     <label class="mb-1">You agree to the exxpert <a href="#">User Agreement</a>, <a href="#">Privacy Policy</a>, and <a href="#">Cookie Policy</a>.</label>
     </div>

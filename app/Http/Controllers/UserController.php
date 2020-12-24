@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class BecomeExxpertController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,19 +13,7 @@ class BecomeExxpertController extends Controller
      */
     public function index()
     {
-        return view('pages.becomeExxpert');
-    }
-    public function servies()
-    {
-        return view('pages.selectservice');
-    }
-    public function businessgoal()
-    {
-        return view('pages.businessgoal');
-    }
-    public function progress()
-    {
-        return view('pages.progress');
+        return view('users.account');
     }
 
     /**
@@ -35,7 +23,7 @@ class BecomeExxpertController extends Controller
      */
     public function create()
     {
-        //
+        return view('user.');
     }
 
     /**
@@ -57,7 +45,7 @@ class BecomeExxpertController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('users.profile');
     }
 
     /**
@@ -68,7 +56,19 @@ class BecomeExxpertController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('users.editprofile');
+    }
+
+
+    public function messages()
+    {
+        return view('users.messages');
+    }
+
+
+    public function alerts()
+    {
+        return view('users.alerts');
     }
 
     /**

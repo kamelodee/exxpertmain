@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class BecomeExxpertController extends Controller
+class PagesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,19 +13,7 @@ class BecomeExxpertController extends Controller
      */
     public function index()
     {
-        return view('pages.becomeExxpert');
-    }
-    public function servies()
-    {
-        return view('pages.selectservice');
-    }
-    public function businessgoal()
-    {
-        return view('pages.businessgoal');
-    }
-    public function progress()
-    {
-        return view('pages.progress');
+        return view('pages.services');
     }
 
     /**
@@ -37,6 +25,15 @@ class BecomeExxpertController extends Controller
     {
         //
     }
+    public function instantsearch()
+    {
+        return view('pages.instantsearch');
+    }
+    public function search()
+    {
+        return view('pages.searchresult');
+    }
+
 
     /**
      * Store a newly created resource in storage.
@@ -55,9 +52,11 @@ class BecomeExxpertController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+
     public function show($id)
     {
-        //
+        return view('pages.singleserve');
     }
 
     /**
